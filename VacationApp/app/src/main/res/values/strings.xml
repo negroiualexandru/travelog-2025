@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Travelog</string>
+    <string name="cancel">Cancel</string>
+    <string name="addVacation">Add a Vacation</string>
+    <string name="addEvent">Add a Category</string>
+    <string name="delete">Delete</string>
+    <string name="confirm">Confirm</string>
+    <string name="next">Next</string>
+    <string name="prev">Prev</string>
+</resources>

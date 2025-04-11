@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    android:orientation="vertical"
+    android:background="#F5F7FA"
+    tools:ignore="HardcodedText"
+    tools:context=".homepage">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="#F5F7FA">
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="All Vacations"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#1E293B"
+            android:paddingBottom="16dp"
+            android:fontFamily="sans-serif-medium"
+            />
+
+        <LinearLayout
+            android:id="@+id/add_vacation_info_holder"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="@drawable/card_background"
+            android:elevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <EditText
+                android:id="@+id/vacation_name_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Vacation Name"
+                android:inputType="text"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:background="@drawable/edittext_background"
+                android:layout_weight="2"
+                android:layout_marginEnd="12dp"
+                tools:ignore="Autofill" />
+
+            <Button
+                android:id="@+id/finalize_add_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:background="@drawable/button_background"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_add_vacation"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Add a Vacation"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_background"
+            android:theme="@null"/>
+
+
+        <ScrollView
+            android:id="@+id/vacation_holder"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:id="@+id/all_vacations"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>
