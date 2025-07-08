@@ -65,9 +65,8 @@ public class eventPage extends AppCompatActivity {
         eventName = getIntent().getStringExtra("event");
         event = new Event(eventName, database.getPhotosByEvent(eventName, vacationName));
         List<List<Uri>> photos = splitList(event.getPhotos());
-        if (!photos.isEmpty()) {
-            handleSelectedImages(photos, photos.size() - 1);
-        }
+        handleSelectedImages(photos, photos.size() - 1);
+
         configureImagePicker();
     }
 
@@ -99,6 +98,17 @@ public class eventPage extends AppCompatActivity {
 
     private void handleSelectedImages(List<List<Uri>> selectedImages, int totalPages) {
         photos.removeAllViews();
+        if (selectedImages.isEmpty()) {
+
+            TextView noPhotosText = new TextView(this);
+            noPhotosText.setText(R.string.no_photos_yet);
+            noPhotosText.setTextSize(18);
+            noPhotosText.setPadding(32, 32, 32, 32);
+            noPhotosText.setTextColor(Color.BLACK);
+            noPhotosText.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            photos.addView(noPhotosText);
+            return;
+        }
         for (Uri image : selectedImages.get(page)) {
             LinearLayout photoHolder = new LinearLayout(this);
             photoHolder.setOrientation(LinearLayout.VERTICAL);
@@ -180,7 +190,7 @@ public class eventPage extends AppCompatActivity {
         next.setOnClickListener(v -> {
             this.page++;
             handleSelectedImages(selectedImages, totalPages);
-            photoHolder.smoothScrollTo(0,0);
+            photoHolder.post(() -> photoHolder.smoothScrollTo(0, 0));
         });
 
         Button prev = new Button(this);
@@ -203,7 +213,7 @@ public class eventPage extends AppCompatActivity {
         prev.setOnClickListener(v -> {
             this.page--;
             handleSelectedImages(selectedImages, totalPages);
-            photoHolder.smoothScrollTo(0,0);
+            photoHolder.post(() -> photoHolder.smoothScrollTo(0, 0));
         });
 
         if (this.page == 0) {

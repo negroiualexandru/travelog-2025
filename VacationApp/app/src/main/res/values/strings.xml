@@ -7,4 +7,5 @@
     <string name="confirm">Confirm</string>
     <string name="next">Next</string>
     <string name="prev">Prev</string>
+    <string name="no_photos_yet">No photos in this event yet. Click upload to add some!</string>
 </resources>
