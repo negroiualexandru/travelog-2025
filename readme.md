@@ -1,1 +1,4 @@
 Travelog is an Android application developed in Android Studio using Java, XML, and SQLite. It's designed to help you organize and store photos from your vacations. The app lets you sort your pictures into categories, which can represent anything from a specific day of your trip to an event during your vacation. A key feature is the ability to save a single photo into multiple categories, making it easy to find and reference your memories.
+For example my recent trip to LA would have many categories like going to the car museum or learning archery which would contain different photos but each category would have photos that would be a part of my favorites. 
+Travelog is useful because it allows users to find the photo more efficently as it is sorted well instead of just scrolling through hundreds of photos from their photo album.
+Here are some example photos:
